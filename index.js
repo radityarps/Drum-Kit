@@ -14,7 +14,6 @@ document.addEventListener("keydown", function (the) {
 });
 
 // sounds list
-
 function whatSound(whatKey) {
   switch (whatKey) {
     case "w":
