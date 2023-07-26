@@ -4,6 +4,7 @@ for (var i = 0; i < drumButton.length; i++) {
   drumButton[i].addEventListener("click", function () {
     var whatButton = this.innerHTML;
     whatSound(whatButton);
+    buttonActive(whatButton);
   });
 }
 
@@ -11,6 +12,7 @@ for (var i = 0; i < drumButton.length; i++) {
 document.addEventListener("keydown", function (the) {
   var whatKey = the.key;
   whatSound(whatKey);
+  buttonActive(whatKey);
 });
 
 // sounds list
@@ -47,4 +49,13 @@ function whatSound(whatKey) {
     default:
       break;
   }
+}
+
+// button animation
+function buttonActive(currentKey) {
+  var currentButton = document.querySelector("." + currentKey);
+  currentButton.classList.add("pressed");
+  setTimeout(function () {
+    currentButton.classList.remove("pressed");
+  }, 300);
 }
